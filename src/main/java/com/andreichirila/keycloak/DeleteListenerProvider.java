@@ -72,6 +72,7 @@ public class DeleteListenerProvider implements EventListenerProvider {
             HttpRequest request = HttpRequest.newBuilder(URI.create(webhookUrl))
                     .header("Content-Type", "application/json")
                     .header("X-Webhook-Secret", secret)
+                    .header("ngrok-skip-browser-warning", "true")
                     .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                     .timeout(Duration.ofSeconds(15))
                     .build();
