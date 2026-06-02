@@ -1,1 +1,2 @@
 com.andreichirila.keycloak.DeleteListenerProviderFactory
+com.andreichirila.keycloak.RegisterListenerProviderFactory
