@@ -7,12 +7,12 @@ import org.keycloak.events.EventType;
 import org.keycloak.events.admin.AdminEvent;
 import org.keycloak.models.KeycloakSession;
 
-public class DeleteListenerProvider implements EventListenerProvider {
+public class VerifyEmailListenerProvider implements EventListenerProvider {
     private final KeycloakSession session;
     private final String webhookUrl;
     private final String secret;
 
-    public DeleteListenerProvider(KeycloakSession session, String webhookUrl, String secret) {
+    public VerifyEmailListenerProvider(KeycloakSession session, String webhookUrl, String secret) {
         this.session = session;
         this.webhookUrl = webhookUrl;
         this.secret = secret;
@@ -20,7 +20,7 @@ public class DeleteListenerProvider implements EventListenerProvider {
 
     @Override
     public void onEvent(Event event) {
-        if (event.getType() == EventType.DELETE_ACCOUNT) {
+        if (event.getType() == EventType.VERIFY_EMAIL) {
             WebhookSender.sendWebhook(event, webhookUrl, secret);
         }
     }

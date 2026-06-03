@@ -1,2 +1,3 @@
 com.andreichirila.keycloak.DeleteListenerProviderFactory
 com.andreichirila.keycloak.RegisterListenerProviderFactory
+com.andreichirila.keycloak.VerifyEmailListenerProviderFactory
